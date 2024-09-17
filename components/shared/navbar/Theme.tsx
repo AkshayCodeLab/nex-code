@@ -5,8 +5,6 @@ import {
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { useTheme } from "@/context/ThemeProvider";
@@ -29,7 +27,7 @@ const Theme = () => {
               alt="sun"
               width={20}
               height={20}
-              className="active-theme"
+              className="active-theme cursor-pointer"
             />
           ) : (
             <Image
@@ -37,7 +35,7 @@ const Theme = () => {
               alt="moon"
               width={20}
               height={20}
-              className="active-theme"
+              className="active-theme cursor-pointer"
             />
           )}
         </MenubarTrigger>
@@ -51,7 +49,7 @@ const Theme = () => {
             return (
               <MenubarItem
                 key={item.value}
-                className="flex items-center gap-4 p-2 dark:bg-dark-300"
+                className="flex cursor-pointer items-center gap-4 p-2 dark:bg-dark-300"
                 onClick={() => {
                   setMode(item.value);
 
