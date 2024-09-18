@@ -17,7 +17,7 @@ const NavContent = () => {
   const pathname = usePathname();
 
   return (
-    <section className="flex h-full flex-col gap-6 pt-16">
+    <section className="flex h-screen flex-col gap-6 pt-16">
       {sidebarLinks.map((item) => {
         const isActive =
           (pathname.includes(item.route) && item.route.length > 1) ||
@@ -76,7 +76,7 @@ const MobileNav = () => {
           />
 
           <p className="h2-bold text-dark100_light900 font-spaceGrotesk">
-            Dev <span className="text-primary-500">Overflow</span>
+            Nex <span className="text-primary-500">Code</span>
           </p>
         </Link>
         <div>
