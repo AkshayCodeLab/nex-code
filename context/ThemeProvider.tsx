@@ -20,8 +20,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         window.matchMedia("(prefers-color-scheme: dark)").matches
       )
     ) {
+      setMode("dark");
       document.documentElement.classList.add("dark");
     } else {
+      setMode("light");
       document.documentElement.classList.remove("dark");
     }
   };
