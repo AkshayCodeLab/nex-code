@@ -12,11 +12,10 @@ const LeftSideBar = () => {
   return (
     <section
       className="background-light900_dark200 light-border
-  custom-scrollbar sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto 
-  border-r p-6 pt-36 shadow-light-300 dark:shadow-none 
-  max-sm:hidden lg:w-[266px]"
+        custom-scrollbar sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto 
+        rounded-lg border-r p-6 pt-36 shadow-lg dark:shadow-none max-sm:hidden lg:w-[266px]"
     >
-      <div className="flex flex-1 flex-col gap-6">
+      <div className="flex flex-1 flex-col gap-5">
         {sidebarLinks.map((item) => {
           const isActive =
             (pathname.includes(item.route) && item.route.length > 1) ||
@@ -29,8 +28,8 @@ const LeftSideBar = () => {
               className={`${
                 isActive
                   ? "primary-gradient rounded-lg text-light-900"
-                  : "text-dark300_light900"
-              } flex items-center justify-start gap-4 bg-transparent p-4 `}
+                  : "text-dark300_light900 hover:text-light-700"
+              } flex items-center justify-start gap-4 rounded-md p-4 transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800`}
             >
               <Image
                 src={item.imgURL}
@@ -40,7 +39,9 @@ const LeftSideBar = () => {
                 className={`${isActive ? "" : "invert-colors"}`}
               />
               <p
-                className={`${isActive ? "base-bold" : "base-medium"} max-lg:hidden`}
+                className={`${
+                  isActive ? "font-semibold" : "font-medium"
+                } hidden lg:block`}
               >
                 {item.label}
               </p>
@@ -48,10 +49,11 @@ const LeftSideBar = () => {
           );
         })}
       </div>
+
       <SignedOut>
         <div className="flex flex-col gap-3">
           <Link href="/sign-in">
-            <Button className="small-medium btn-secondary min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none">
+            <Button className="btn-secondary w-full rounded-lg px-4 py-3 shadow-md transition-shadow duration-300 hover:shadow-lg">
               <Image
                 src="/assets/icons/account.svg"
                 alt="login"
@@ -59,14 +61,14 @@ const LeftSideBar = () => {
                 height={20}
                 className="invert-colors lg:hidden"
               />
-              <span className="primary-text-gradient max-lg:hidden">
+              <span className="primary-text-gradient hidden lg:inline">
                 Log In
               </span>
             </Button>
           </Link>
 
           <Link href="/sign-up">
-            <Button className="small-medium light-border-2 btn-tertiary text-dark400_light900 min-h-[41px] w-full rounded-lg border px-4 py-3 shadow-none">
+            <Button className="btn-tertiary w-full rounded-lg border px-4 py-3 shadow-md transition-shadow duration-300 hover:shadow-lg">
               <Image
                 src="/assets/icons/sign-up.svg"
                 alt="signup"
@@ -74,7 +76,7 @@ const LeftSideBar = () => {
                 height={20}
                 className="invert-colors lg:hidden"
               />
-              <span className="max-lg:hidden">Sign Up</span>
+              <span className="hidden lg:inline">Sign Up</span>
             </Button>
           </Link>
         </div>
