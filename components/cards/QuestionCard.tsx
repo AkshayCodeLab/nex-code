@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import RenderTag from "../shared/RenderTag";
 import Metric from "../shared/Metric";
-import { getTimeStamp } from "@/lib/utils";
+import { formatNumber, getTimeStamp } from "@/lib/utils";
 
 interface Props {
   _id: number;
@@ -76,21 +76,21 @@ const QuestionCard = ({
         <Metric
           imgUrl="/assets/icons/like.svg"
           alt="upvotes"
-          value={upvotes}
+          value={formatNumber(upvotes)}
           title="Votes"
           textStyles="small-medium text-dark400_light800"
         />
         <Metric
           imgUrl="/assets/icons/message.svg"
           alt="messages"
-          value={answers.length}
+          value={formatNumber(answers.length)}
           title="Answers"
           textStyles="small-medium text-dark400_light800"
         />
         <Metric
           imgUrl="/assets/icons/eye.svg"
           alt="eye"
-          value={views}
+          value={formatNumber(views)}
           title="Views"
           textStyles="small-medium text-dark400_light800"
         />

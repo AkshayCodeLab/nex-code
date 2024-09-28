@@ -22,7 +22,7 @@ const questions = [
       picture: "https://example.com/john_duo.png",
     },
     upvotes: 10,
-    views: 200,
+    views: 2000,
     answers: [
       { _id: "ans1", content: "You can use ON DELETE CASCADE for this." },
       {
