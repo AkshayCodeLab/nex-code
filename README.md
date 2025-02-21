@@ -1,3 +1,7 @@
+**Deployed link of the project:** https://nex-code-five.vercel.app/
+
+**Introduction:** Modern UI version of StackOverFlow which incorporates advanced AI features as well as Support community. 
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
